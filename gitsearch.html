@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gitsearch.css">
+</head>
+<script src="/Users/gadiyaramsaidurgaharshitha/bower_components/angular/angular.js"></script>
+<script src="gitsearch.js"></script>
+<body ng-app="mymod" ng-controller="mycntrl">
+
+    <div class='navbar'>
+        <div class="row">
+            <div class="col1">
+                 <img src ="../assets/logo.png" class="img"> </div>
+            <div class="col2">
+                <input type="text" placeholder="Search or jump to..." ng-model="user" ng-keypress="search()">
+                 <button class="search-button" ng-click="getdetails()">Search
+          </button>
+                </div>
+    </div>
+    </div><br><br><br>
+    <div class="box">
+        <div class="row">
+            <div class="column1">
+                <!-- <div class="column1row1"> -->
+                    <!-- <img src="../assets/logo.png" class="image"> -->
+                     <img class="image" src="{{details[0].avatar_url}}"/>
+                <!-- </div> -->
+            </div>
+            <div class="column2">
+                <div class="column2row1">
+                <h1>{{details[0].name}}</h1> </div>
+                <div class="column2row2">
+                    <div class="row2col1">
+                    <h3>{{details[0].followers}} Followers</h3></div>
+                    <div class="row2col2">
+                    <h3>{{details[0].following}} Following</h3></div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h3>User Details</h3><hr>
+            <table>
+                <tr>
+                    <td ><h3> ID: </h3></td>
+                    <td> {{details[0].id}} </td>
+                </tr>
+                <tr>
+                    <td><h3> Number of public repositories: </h3></td>
+                    <td> {{details[0].public_repos}}</td>
+                </tr>
+                <tr>
+                    <td><h3> Number of public gists: </h3></td>
+                    <td> {{details[0].public_gists}} </td>
+                </tr>
+                </table>
+    </div>
+</body>
+</html>
