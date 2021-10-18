@@ -1,3 +1,4 @@
+// using angular
 var mod = angular.module('mymod',[])
 mod.controller('mycntrl', function($scope, $http){
     $scope.search = function() {
